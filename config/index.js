@@ -1,5 +1,6 @@
 // Import the functions you need from the SDKs you need
 import app from "firebase/compat/app";
+import "firebase/compat/firestore";
 import "firebase/compat/auth";
 import "firebase/compat/database";
 
@@ -20,3 +21,11 @@ const firebaseConfig = {
 // Initialize Firebase
 const firebase = app.initializeApp(firebaseConfig);
 export default firebase;
+
+
+import { createClient } from '@supabase/supabase-js';
+
+const supabaseUrl = 'https://jsczitilzorbeapnotnp.supabase.co';
+const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpzY3ppdGlsem9yYmVhcG5vdG5wIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzI5MDE0NTMsImV4cCI6MjA0ODQ3NzQ1M30.9WakA1jeGzwNYvEvZ7-ibG1J1kmSLisDsgWrsBV4Nds";
+const supabase = createClient(supabaseUrl, supabaseKey);
+export { supabase };

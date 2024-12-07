@@ -22,7 +22,8 @@ export default function Auth(props) {
            onPress={() => {
             
           auth.signInWithEmailAndPassword(email,pwd).then(() => {
-            props.navigation.navigate("Home");
+            const currentId =auth.currentUser.uid;
+            props.navigation.navigate("Home",{currentId:currentId});
           })
           .catch((error) => {
             alert(error);
